@@ -1,0 +1,9 @@
+<h1>Витрина</h1> 
+<div class="row text-center">
+    <div class="col-md-3" ng-repeat="phone in $ctrl.phones">
+        <img src={{phone.imgUrl}} alt={{phone.name}} class="thumbail">
+        <p>{{phone.name}}</p>
+        <p>{{phone.price}} руб.</p>
+        <button class="btn btn-to-cart">В корзину</button>
+    </div>
+</div>
