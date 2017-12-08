@@ -6,23 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vitrin</title>
+    
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/cart-page.css">
     <link rel="stylesheet" href="css/phone-list.css">
+    
     <script src="libs/angular/angular.js"></script>
     <script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="libs/ngModal/dist/ng-modal.min.js"></script>
     <script src="libs/angular-resource/angular-resource.js"></script>
+    <script src="libs/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <link rel="stylesheet" href="libs/ngModal/dist/ng-modal.css">
     <script src="js/phone.service.js"></script>
     <script src="js/module.js"></script>
     <script src="js/config.js"></script>
     <script src="js/phone-list/phone.module.js"></script>
     <script src="js/phone-list/phone.component.js"></script>
+    <script src="js/cart-page/cart.page.module.js"></script>
+    <script src="js/cart-page/cart.page.component.js"></script>
     <script src="js/phone.app.ctrl.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-    
+
 </head>
 
 <body ng-controller="phoneAppCtrl">
@@ -52,12 +60,14 @@
                         <table class="table">
                             <tr>
                                 <td>В корзине</td>
-                                <td>{{Cart.purchases[0].count}}</td>
+                                <td ng-bind="totalCount()"></td>
                             </tr>
                             <tr>
                                 <td>На сумму</td>
-                                
-                                <td ng-bind="totalPrice()">руб</td>
+
+                                <td>
+                                    <span ng-bind="totalPrice()"></span>
+                                </td>
                             </tr>
                         </table>
                     </li>

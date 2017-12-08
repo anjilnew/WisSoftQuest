@@ -1,7 +1,11 @@
 'use strict'
 
 angular.module("phonesApp").config(
-    function($stateProvider) {
+    function($stateProvider,localStorageServiceProvider) {
+      localStorageServiceProvider
+      .setPrefix('phonesApp')
+      .setStorageType('sessionStorage')
+      .setNotify(true, true)
         var showcaseState = {
           name: 'showcase',
           url: '/showcase',
@@ -11,7 +15,7 @@ angular.module("phonesApp").config(
         var cartState = {
           name: 'cart',
           url: '/cart',
-          template: ''
+          template: '<cart-page></cart-page>'
         }
       
         $stateProvider.state(showcaseState);

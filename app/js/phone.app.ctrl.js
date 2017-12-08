@@ -1,6 +1,11 @@
 angular.module("phonesApp")
 .controller("phoneAppCtrl",function($scope,Cart){
-    $scope.Cart=Cart;
-    $scope.totalPrice=Cart.calcTotalPrice
+    
+    $scope.totalPrice=function(){
+        return Cart.calcTotalPrice()
+    };
+    $scope.totalCount=function(){
+        return Cart.calcTotalCount()
+    };
     
 })
