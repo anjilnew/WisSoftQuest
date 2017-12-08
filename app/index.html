@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="css/phone-list.css">
     <script src="libs/angular/angular.js"></script>
     <script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="libs/ngModal/dist/ng-modal.min.js"></script>
+    <script src="libs/angular-resource/angular-resource.js"></script>
+    <link rel="stylesheet" href="libs/ngModal/dist/ng-modal.css">
+    <script src="js/phone.service.js"></script>
     <script src="js/module.js"></script>
     <script src="js/config.js"></script>
     <script src="js/phone-list/phone.module.js"></script>
@@ -20,9 +24,46 @@
 </head>
 
 <body>
-    <a ui-sref="showcase" ui-sref-active="active">showcase</a>
-    <a ui-sref="cart" ui-sref-active="cart">cart</a>
-    <ui-view></ui-view>
+
+    <div class="navbar-fixed-top">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteName</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li ui-sref="showcase" ui-sref-active="active">
+                        <a href="javascript:void(0)">showcase</a>
+                    </li>
+                    <li ui-sref="cart" ui-sref-active="active">
+                        <a href="javascript:void(0)">cart</a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="btn btn-lg">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <table class="table">
+                            <tr>
+                                <td>В корзине</td>
+                                <td>7 товаров</td>
+                            </tr>
+                            <tr>
+                                <td>На сумму</td>
+                                <td>1000 руб</td>
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <ui-view class="container"></ui-view>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 </body>

@@ -1,0 +1,11 @@
+.phone-item{
+    margin:20px 0 20px 0;
+}
+.pay_form tr td:first-child{
+    text-align: left;
+}
+.pay_form{
+    width: 80%;
+  
+}
+.top-buffer { margin-top:20px; }

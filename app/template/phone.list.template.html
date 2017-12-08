@@ -1,9 +1,52 @@
-<h1>Витрина</h1> 
+<h1>Витрина</h1>
 <div class="row text-center">
-    <div class="col-md-3" ng-repeat="phone in $ctrl.phones">
+    <div class="col-md-4 phone-item" ng-repeat="phone in $ctrl.phones">
         <img src={{phone.imgUrl}} alt={{phone.name}} class="thumbail">
         <p>{{phone.name}}</p>
         <p>{{phone.price}} руб.</p>
-        <button class="btn btn-to-cart">В корзину</button>
+        <button class="btn btn-to-cart" ng-click="show=true" ng-init="show=false">
+            <span class="glyphicon glyphicon-shopping-cart"></span> В корзину</button>
+        <modal-dialog show="show" dialog-title="{{phone.name}}">
+            <h2 class="text-center">Добавить в корзину</h2>
+            <div class="media">
+                <div class="media-left media-middle">
+                    <img width="300px" class="media-object img-thumbnail img-responsive" src={{phone.imgUrl}} alt="avatar" />
+                </div>
+
+                <div class="media-body">
+
+                    <table class="pay_form">
+                        <tr>
+                            <td>
+                                <h4 class="media-heading">{{phone.name}}</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-6">
+                                <h4>Кол-во штук:</h4>
+                            </td>
+                            <td>
+                                <input class="form-control col-md-6 number " data-ng-model="count" min="0" data-ng-init="count=1" type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-6">
+                                <h4>Сумма:</h4>
+                            </td>
+                            <td class="col-md-6">
+                                <h4>{{phone.price*count}} руб</h4>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+            </div>
+            <div class="row top-buffer">
+                <button class="btn btn-success btn-lg col-md-8 col-md-offset-2">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> В корзину</button>
+            </div>
+        </modal-dialog>
     </div>
 </div>
