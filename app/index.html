@@ -19,11 +19,13 @@
     <script src="js/config.js"></script>
     <script src="js/phone-list/phone.module.js"></script>
     <script src="js/phone-list/phone.component.js"></script>
+    <script src="js/phone.app.ctrl.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
+    
 </head>
 
-<body>
+<body ng-controller="phoneAppCtrl">
 
     <div class="navbar-fixed-top">
         <nav class="navbar navbar-default">
@@ -33,10 +35,10 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li ui-sref="showcase" ui-sref-active="active">
-                        <a href="javascript:void(0)">showcase</a>
+                        <a href="javascript:void(0)">Витрина</a>
                     </li>
                     <li ui-sref="cart" ui-sref-active="active">
-                        <a href="javascript:void(0)">cart</a>
+                        <a href="javascript:void(0)">Корзина</a>
                     </li>
 
                 </ul>
@@ -50,11 +52,12 @@
                         <table class="table">
                             <tr>
                                 <td>В корзине</td>
-                                <td>7 товаров</td>
+                                <td>{{Cart.purchases[0].count}}</td>
                             </tr>
                             <tr>
                                 <td>На сумму</td>
-                                <td>1000 руб</td>
+                                
+                                <td ng-bind="totalPrice()">руб</td>
                             </tr>
                         </table>
                     </li>
@@ -63,7 +66,7 @@
         </nav>
     </div>
 
-    <ui-view class="container"></ui-view>
+    <ui-view class=""></ui-view>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 </body>

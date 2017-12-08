@@ -11,7 +11,7 @@ angular.module("phonesApp").config(
         var cartState = {
           name: 'cart',
           url: '/cart',
-          template: '<h3>shopping cart</h3>'
+          template: ''
         }
       
         $stateProvider.state(showcaseState);
