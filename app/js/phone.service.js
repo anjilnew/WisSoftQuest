@@ -50,9 +50,10 @@ angular
       this.saveStorage()
       return true;
     };
+
     this.remove=function(item){
       let index=this.purchases.indexOf(item);
-      if(index=-1){
+      if(index!=-1){
         this.purchases.splice(index,1)
       }
       this.saveStorage();

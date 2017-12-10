@@ -29,3 +29,6 @@ ul {
     cursor: pointer;
 }
 
+.item--cart-count input{
+    width:50px !important;
+}
