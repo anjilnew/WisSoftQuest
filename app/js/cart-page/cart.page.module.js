@@ -1,1 +1,1 @@
-angular.module("cartPage",["phoneServices"])
+angular.module("cartPage",["ngModal","phoneServices"])

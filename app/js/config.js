@@ -11,6 +11,11 @@ angular.module("phonesApp").config(
           url: '/showcase',
           template: '<phone-list></phone-list>'
         }
+        var defaultUrl = {
+          name: 'default',
+          url: '',
+          template: '<phone-list></phone-list>'
+        }
       
         var cartState = {
           name: 'cart',
@@ -20,5 +25,7 @@ angular.module("phonesApp").config(
       
         $stateProvider.state(showcaseState);
         $stateProvider.state(cartState);
+        $stateProvider.state(defaultUrl)
+       
       }
 )

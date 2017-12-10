@@ -1,28 +1,39 @@
 <div class="container" style="margin-top:100px">
     <table class="table table-striped">
-       
 
-<thead>
-    <th>Изображение</th>
-    <th>id</th>
-    <th>Название телефона</th>
-    <th>Количество</th>
-    <th>Цена за штуку</th>
-    <th>Итоговая сумма</th>
-</thead>
-<tr class="item--cart" ng-repeat="purchase in $ctrl.purchases">
+
+        <thead>
+            <th>Изображение</th>
+            <th>id</th>
+            <th>Название телефона</th>
+            <th>Количество</th>
+            <th>Цена за штуку</th>
+            <th>Итоговая сумма</th>
+            <th>Действия</th>
+        </thead>
+        <tr class="item--cart" ng-repeat="purchase in $ctrl.purchases">
             <td>
-                <img width="100px" class="img-thumbnail img-responsive item--cart-img" src={{purchase.item.imgUrl}} alt="avatar"
-                />
+                <img width="100px" class="img-thumbnail img-responsive item--cart-img" ng-src={{purchase.item.imgUrl}} alt="avatar" />
             </td>
             <td class="item--cart-id">{{purchase.item.id}}</td>
             <td class="item--cart-name">{{purchase.item.name}}</td>
             <td class="item--cart-count">{{purchase.count}} </td>
             <td class="item--cart-price">{{purchase.item.price}}</td>
             <td class="item--cart-sum">{{purchase.item.price*purchase.count}} </td>
+            <td class="item--cart-action">
+                <span class="glyphicon glyphicon-edit"></span>
+                <span ng-click="$ctrl.toggleShow(purchase)" class="glyphicon glyphicon-remove"></span>
+            </td>
+
 
         </tr>
-
+        <modal-dialog show="$ctrl.show" dialog-title="Подтверждение удаления">
+            <h3 class="text-center">Вы дейстивтельно хотите удалить даннную покупку?</h3>
+            <div class="row top-buffer">
+                <button ng-click="$ctrl.remove()" class="btn btn-success btn-lg col-md-3 col-md-offset-2">Да</button>
+                <button class="btn btn-danger btn-lg col-md-3 col-md-offset-2" ng-click="$ctrl.toggleShow()">Нет</button>
+            </div>
+        </modal-dialog>
 
     </table>
 

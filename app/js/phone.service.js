@@ -32,7 +32,7 @@ angular
       let total = 0;
       if (this.purchases)
         for (let i of this.purchases) {
-          total = +i.count;
+          total +=i.count;
         }
       return total ? total : 0;
     };
@@ -50,4 +50,11 @@ angular
       this.saveStorage()
       return true;
     };
+    this.remove=function(item){
+      let index=this.purchases.indexOf(item);
+      if(index=-1){
+        this.purchases.splice(index,1)
+      }
+      this.saveStorage();
+    }
   });

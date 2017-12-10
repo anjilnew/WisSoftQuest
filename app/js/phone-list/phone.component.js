@@ -4,19 +4,19 @@ angular.module("phoneList").component("phoneList", {
     "Phone",
     "Cart",
     function(Phone, Cart) {
-     
       this.Cart = Cart;
-      this.total=0;
-      this.calcTotal=function (){
-        this.total=Cart.calcTotalPrice();
+      this.show = false;
+      this.currentPhone={};
+      this.toggleShow = function(phone={}) {
+        this.show = !this.show;
+        this.currentPhone=phone;
       }
       this.phones = Phone.query();
-      this.buy=function(item,count){
-        Cart.push(item,count)
-        this.calcTotal()
- 
-      }
-      
+      this.buy = function(item, count) {
+        Cart.push(item, count);
+        this.toggleShow();
+        return true;
+      };
     }
   ]
 });

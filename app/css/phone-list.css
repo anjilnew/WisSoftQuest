@@ -1,5 +1,7 @@
 .phone-item{
-    margin:20px 0 20px 0;
+   padding:20px;
+    border:solid 2px #e7e7e7;
+    border-radius: 5px;
 }
 .pay_form tr td:first-child{
     text-align: left;
@@ -9,3 +11,10 @@
   
 }
 .top-buffer { margin-top:20px; }
+.container--img{
+    display: flex;
+    height: 300px;
+}
+.container--img img{
+    margin: auto;
+}

@@ -7,18 +7,19 @@
     
   },{
     "id":2,
-    "name": "Galaxy s3",
-    "price":200,
-    "description":"Galaxy s3 descrition",
-    "imgUrl":"https://images-na.ssl-images-amazon.com/images/I/41Vei2caylL._SL500_AC_SS350_.jpg"
+    "name": "IPhone 6",
+    "price":300,
+    "description":"apple phone",
+    "imgUrl":"https://cnet2.cbsistatic.com/img/BBMgM1aXEgBvLfELWdg0-jDMYkM=/270x203/2014/11/25/3e125a37-7480-11e4-a0a6-d4ae52e95e57/apple-iphone-6-plus-64gb-review-a-classy-iphablet.jpg"
     
   },
   {
     "id":3,
-    "name": "Galaxy s3",
-    "price":200,
-    "description":"Galaxy s3 descrition",
-    "imgUrl":"https://images-na.ssl-images-amazon.com/images/I/41Vei2caylL._SL500_AC_SS350_.jpg"
+    
+    "name": "Xiaomi redmi 3",
+    "price":250,
+    "description":"the best phone",
+    "imgUrl":"https://gloimg.gbtcdn.com/gb/pdm-product-pic/Electronic/2016/01/11/goods-img/1498594780550767223.jpg"
     
   },  {
     "id":4,
