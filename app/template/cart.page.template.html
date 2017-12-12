@@ -17,7 +17,14 @@
             <td class="item--cart-name">{{purchase.item.name}}</td>
             <td class="item--cart-count" ng-init="edit=false" ng-switch on="edit">
                 
-                <input type="number" ng-blur="$parent.edit=false" ng-model="purchase.count" ng-switch-when="true">
+                <input type="number" 
+                ng-init="newCount=purchase.count" 
+                ng-model='newCount' 
+                size="3" 
+                class="form-control number" 
+                ng-min="1" min="1" 
+                ng-blur="$ctrl.edit(purchase,newCount);$parent.edit=false" 
+                ng-switch-when="true">
                 <span ng-switch-when="false">{{purchase.count}} шт. </span>
             </td>
 

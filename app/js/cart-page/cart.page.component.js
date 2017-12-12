@@ -9,11 +9,9 @@ angular.module("cartPage").component("cartPage", {
         this.show = !this.show;
         this.currentPurchase=purchase;
       }
-      this.edit=function(){
-        alert("2");
-        Cart.saveStorage()
-
-      }
+      this.edit=(i,c)=>{
+        console.log(i,c)
+        Cart.edit(i,c)};
  
       this.remove=function(){
         Cart.remove(this.currentPurchase)
